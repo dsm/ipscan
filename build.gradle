@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.guardsquare:proguard-gradle:7.3.0"
+        classpath "com.guardsquare:proguard-gradle:7.4.2"
     }
 }
 
@@ -29,7 +29,7 @@ String exec(def line, String dir = ".", boolean failOnError = true) {
 
 version = exec("git describe --tags", ".", false) ?: "unknown"
 
-sourceCompatibility = targetCompatibility = 11
+sourceCompatibility = targetCompatibility = 17
 
 def javaModules = ["java.base", "java.prefs", "java.logging", "jdk.crypto.ec"]
 project.ext.set("javaModules", javaModules)
@@ -65,12 +65,12 @@ configurations {
 }
 
 dependencies {
-    def swtVersion = '3.122.0'
+    def swtVersion = '3.125.0'
     linux64 "org.eclipse.platform:org.eclipse.swt.gtk.linux.x86_64:${swtVersion}"
     win64 "org.eclipse.platform:org.eclipse.swt.win32.win32.x86_64:${swtVersion}"
     macX86 "org.eclipse.platform:org.eclipse.swt.cocoa.macosx.x86_64:${swtVersion}"
     macArm64 "org.eclipse.platform:org.eclipse.swt.cocoa.macosx.aarch64:${swtVersion}"
-    jna 'net.java.dev.jna:jna:5.9.0'
+    jna 'net.java.dev.jna:jna:5.14.0'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-core:2.23.0'
 }
