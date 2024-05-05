@@ -13,7 +13,7 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'liberica'
         cache: 'gradle'
     - name: Build & Test
       run: xvfb-run -a ./gradlew --info test linux
@@ -43,7 +43,7 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'liberica'
         architecture: aarch64
         cache: 'gradle'
 
@@ -75,7 +75,7 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         java-version: '17'
-        distribution: 'temurin'
+        distribution: 'liberica'
         architecture: x64
         cache: 'gradle'
     - run: ./gradlew test win-installer --info
