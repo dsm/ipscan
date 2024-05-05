@@ -47,7 +47,7 @@ jobs:
         architecture: aarch64
         cache: 'gradle'
 
-    - run: JLINK_OPTS="--module-path $JAVA_HOME_21_AARCH64/jmods" ./gradlew macArm64 --info
+    - run: JLINK_OPTS="--module-path $JAVA_HOME_17_AARCH64/jmods" ./gradlew macArm64 --info
 
       env:
         APPLE_USER: ${{ secrets.APPLE_USER }}
